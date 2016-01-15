@@ -8,13 +8,13 @@ main(List<String> args) async {
   // Perform task configuration here as necessary.
 
   // Available task configurations:
-  config.analyze.entryPoints = ['web/main.dart', 'web/background.dart'];
+  config.analyze.entryPoints = ['src/multiselect.dart'];
   // config.copyLicense
   // config.coverage
   // config.docs
   // config.examples
   config.format
-    ..directories = ['lib/', 'test/', 'tool/', 'web/']
+    ..directories = ['lib/', 'test/', 'tool/']
     ..lineLength = 120;
   // config.test
 
