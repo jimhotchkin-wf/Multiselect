@@ -8,7 +8,7 @@ main(List<String> args) async {
   // Perform task configuration here as necessary.
 
   // Available task configurations:
-  config.analyze.entryPoints = ['src/multiselect.dart'];
+  config.analyze.entryPoints = ['lib/src/multiselect.dart'];
   // config.copyLicense
   // config.coverage
   // config.docs
