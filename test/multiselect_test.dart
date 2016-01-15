@@ -35,6 +35,18 @@ void main() {
       baseList[1] = 'F';
       expect(baseList, ['A', 'F', 'D', 'E']);
     });
+
+    test('should allow for list length to be truncated', () {
+      baseList.addAll(['A', 'C', 'D', 'E']);
+      baseList.length = 3;
+      expect(baseList, ['A', 'C', 'D']);
+    });
+
+    test('should allow for list length to be expanded', () {
+      baseList.addAll(['A', 'C', 'D', 'E']);
+      baseList.length = 6;
+      expect(baseList, ['A', 'C', 'D', 'E', null, null]);
+    });
   });
 
   group('Single selection toggle', () {
