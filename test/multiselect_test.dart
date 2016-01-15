@@ -29,6 +29,12 @@ void main() {
       baseList.addAll(['A', 'C', 'D', 'E']);
       expect(baseList[1], 'C');
     });
+
+    test('should insert an item at a given index of the list', () {
+      baseList.addAll(['A', 'C', 'D', 'E']);
+      baseList[1] = 'F';
+      expect(baseList, ['A', 'F', 'D', 'E']);
+    });
   });
 
   group('Single selection toggle', () {

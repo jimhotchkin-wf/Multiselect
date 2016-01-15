@@ -193,10 +193,6 @@ class MultiSelectList<E> extends ListBase<E> {
   // Base class delegated functions
   int get length => baseList.length;
 
-  void set length(int length) {
-    baseList.length = length;
-  }
-
   void operator []=(int index, E value) {
     baseList[index] = value;
   }
