@@ -3,6 +3,57 @@ import 'package:test/test.dart';
 import '../lib/src/multiselect.dart';
 
 void main() {
+  group('Base list functionality', () {
+    MultiSelectList baseList;
+
+    setUp(() {
+      baseList = new MultiSelectList();
+    });
+
+    test('should add a single item to the list', () {
+      baseList.add('C');
+      expect(baseList, ['C']);
+    });
+
+    test('should add multiple items to the list', () {
+      baseList.addAll(['A', 'B', 'C', 'D', 'E']);
+      expect(baseList, ['A', 'B', 'C', 'D', 'E']);
+    });
+
+    test('should return the length of the list', () {
+      baseList.addAll(['A', 'C', 'D', 'E']);
+      expect(baseList.length, 4);
+    });
+
+    test('should return an item at a given index of the list', () {
+      baseList.addAll(['A', 'C', 'D', 'E']);
+      expect(baseList[1], 'C');
+    });
+  });
+
+  group('Single selection toggle', () {
+    MultiSelectList singleSelections;
+
+    setUp(() {
+      singleSelections = new MultiSelectList()..addAll(['A', 'B', 'C', 'D', 'E']);
+    });
+
+    test('should add a single item to the selected items list', () {
+      singleSelections.toggleSelect('C');
+      expect(singleSelections.getSelected(), ['C']);
+    });
+
+    test('should remove a single item from the selected items list if its already added', () {
+      singleSelections.toggleSelect('C');
+      singleSelections.toggleSelect('D');
+      expect(singleSelections.getSelected(), ['C', 'D']);
+      singleSelections.toggleSelect('C');
+      expect(singleSelections.getSelected(), ['D']);
+      singleSelections.toggleSelect('D');
+      expect(singleSelections.getSelected(), []);
+    });
+  });
+
   group('Range selections', () {
     MultiSelectList rangeSelections;
 
