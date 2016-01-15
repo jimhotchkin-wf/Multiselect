@@ -6,16 +6,10 @@ environment:
   sdk: ">=1.9.0 <2.0.0"
 dependencies:
   browser_detect: ">=1.0.0 <2.0.0"
-  chrome: any
   dart_coveralls: 0.4.0
-  fluri: 1.0.1
   grinder: "^0.8.0+1"
-  intl: 0.12.4+2
-  lawndart: any
   react: ">=0.6.0"
-  sass: any
   unittest: any
-  w_flux: 2.0.0
 
 dev_dependencies:
   coverage: "^0.7.2"
@@ -29,5 +23,3 @@ transformers:
   - $dart2js:
       minify: false
       csp: true
-  - chrome
-  - sass
